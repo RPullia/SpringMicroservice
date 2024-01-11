@@ -1,0 +1,5 @@
+# Ignora la cartella .idea
+.idea/
+
+# Ignora tutte le cartelle target
+target/
