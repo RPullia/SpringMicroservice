@@ -11,7 +11,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("api/v1/customers")
-public record  CustomerController(CustomerService customerService) {
+public class  CustomerController {
+
+    private CustomerService customerService;
+
+    public CustomerController(CustomerService customerService) {
+        this.customerService = customerService;
+    }
+
     @PostMapping
     public void registrateCustomer(@RequestBody CustomerRegistrationRequest customerRegistrationRequest){
         customerService.registerCustomer(customerRegistrationRequest);
