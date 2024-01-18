@@ -1,4 +1,4 @@
-package com.robp.customer;
+package com.robp.customer.service;
 
 import java.util.Objects;
 

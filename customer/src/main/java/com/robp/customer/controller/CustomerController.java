@@ -1,8 +1,11 @@
-package com.robp.customer;
+package com.robp.customer.controller;
 
 
-import com.robp.customer.CustomerRegistrationRequest;
-import com.robp.customer.CustomerService;
+import com.robp.customer.domain.dto.CustomerDto;
+import com.robp.customer.domain.entity.CustomerEntity;
+import com.robp.customer.mapper.Mapper;
+import com.robp.customer.service.CustomerRegistrationRequest;
+import com.robp.customer.service.CustomerService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,9 +17,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class  CustomerController {
 
     private final CustomerService customerService;
+    private Mapper<CustomerEntity, CustomerDto> customerMapper;
 
-    public CustomerController(CustomerService customerService) {
+    public CustomerController(CustomerService customerService, Mapper<CustomerEntity, CustomerDto> customerMapper) {
         this.customerService = customerService;
+        this.customerMapper = customerMapper;
     }
 
     @PostMapping
