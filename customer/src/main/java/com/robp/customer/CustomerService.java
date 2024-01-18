@@ -9,6 +9,9 @@ public class CustomerService {
     private final CustomerRepository customerRepository;
     private final RestTemplate restTemplate;
 
+    //Fraud service names that will be used for service discovery from Eureka
+    private final String FRAUD_SERVICE_NAME = "FRAUD";
+
     public CustomerService(CustomerRepository customerRepository, RestTemplate restTemplate) {
         this.customerRepository = customerRepository;
         this.restTemplate = restTemplate;
@@ -23,7 +26,7 @@ public class CustomerService {
         customerRepository.saveAndFlush(customer);
 
         //communicate with fraud microservice and check if fraudster
-        FraudCheckResponse fraudCheckResponse = restTemplate.getForObject("http://localhost:8081/api/v1/fraud-check/{customerId}",
+        FraudCheckResponse fraudCheckResponse = restTemplate.getForObject("http://"+FRAUD_SERVICE_NAME+"/api/v1/fraud-check/{customerId}",
                 FraudCheckResponse.class,
                 customer.getId()
         );
