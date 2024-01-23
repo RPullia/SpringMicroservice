@@ -1,7 +1,6 @@
 package com.robp.customer.controller;
 
 
-import com.robp.fraud.FraudController;
 import com.robp.customer.domain.dto.CustomerDto;
 import com.robp.customer.domain.entity.CustomerEntity;
 import com.robp.customer.mapper.Mapper;

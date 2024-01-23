@@ -1,11 +1,12 @@
-package com.robp.fraud;
+package com.robp.fraud.domain.entity;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
 @Entity
-public class FraudCheckHistory {
+@Table(name = "fraud_check_history")
+public class FraudCheckHistoryEntity {
     @Id
     @SequenceGenerator(
             name ="fraud_id_sequence",
@@ -19,10 +20,10 @@ public class FraudCheckHistory {
     private Integer customerId;
     private Boolean isFraudster;
     private LocalDateTime createdAt;
-    public FraudCheckHistory() {
+    public FraudCheckHistoryEntity() {
     }
 
-    public FraudCheckHistory(Integer customerId, Boolean isFraudster, LocalDateTime createdAt) {
+    public FraudCheckHistoryEntity(Integer customerId, Boolean isFraudster, LocalDateTime createdAt) {
         this.customerId = customerId;
         this.isFraudster = isFraudster;
         this.createdAt = createdAt;
@@ -32,6 +33,9 @@ public class FraudCheckHistory {
         return id;
     }
 
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public Integer getCustomerId() {
         return customerId;
@@ -71,7 +75,7 @@ public class FraudCheckHistory {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof FraudCheckHistory that)) return false;
+        if (!(o instanceof FraudCheckHistoryEntity that)) return false;
         return Objects.equals(getId(), that.getId()) && Objects.equals(getCustomerId(), that.getCustomerId()) && Objects.equals(isFraudster, that.isFraudster) && Objects.equals(getCreatedAt(), that.getCreatedAt());
     }
 
@@ -79,4 +83,6 @@ public class FraudCheckHistory {
     public int hashCode() {
         return Objects.hash(getId(), getCustomerId(), isFraudster, getCreatedAt());
     }
+
+
 }

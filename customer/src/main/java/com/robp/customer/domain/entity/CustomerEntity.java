@@ -35,7 +35,6 @@ public class CustomerEntity {
         return id;
     }
 
-    // Used by Jackson to build the JSON representation of the object made starting from no args constructor + setter
     public void setId(Integer id) {
         this.id = id;
     }

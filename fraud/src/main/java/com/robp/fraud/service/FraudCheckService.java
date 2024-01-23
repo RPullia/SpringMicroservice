@@ -1,5 +1,7 @@
-package com.robp.fraud;
+package com.robp.fraud.service;
 
+import com.robp.fraud.domain.entity.FraudCheckHistoryEntity;
+import com.robp.fraud.repository.FraudCheckHistoryRepository;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -16,12 +18,12 @@ public class FraudCheckService {
 
     public boolean isFraudulentCustomer(Integer customerId){
         boolean isFraudulent = false;
-        FraudCheckHistory fraudCheckHistory;
+        FraudCheckHistoryEntity fraudCheckHistoryEntity;
 
         //todo: implement some sort of check to decide if it is fraudulent
 
         fraudCheckHistoryRepository.save(
-              fraudCheckHistory  = new FraudCheckHistory(customerId, isFraudulent, LocalDateTime.now())
+              fraudCheckHistoryEntity = new FraudCheckHistoryEntity(customerId, isFraudulent, LocalDateTime.now())
         );
         return false;
     }

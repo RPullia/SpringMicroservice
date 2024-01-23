@@ -3,7 +3,7 @@ package com.robp.customer.service.impl;
 import com.robp.customer.domain.entity.CustomerEntity;
 import com.robp.customer.repository.CustomerRepository;
 import com.robp.customer.service.CustomerService;
-import com.robp.fraud.FraudCheckResponse;
+import com.robp.fraud.domain.FraudCheckResponse;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
