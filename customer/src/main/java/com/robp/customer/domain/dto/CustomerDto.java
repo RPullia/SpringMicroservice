@@ -22,6 +22,10 @@ public class CustomerDto {
         return id;
     }
 
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
     public String getFirstName() {
         return firstName;
     }
@@ -68,4 +72,5 @@ public class CustomerDto {
                 ", email='" + email + '\'' +
                 '}';
     }
+
 }

@@ -25,6 +25,7 @@ public class CustomerServiceImpl implements CustomerService {
 
         //todo: check if email is valid
         //todo: check if email not taken
+        customerRepository.saveAndFlush(customerEntity);
 
         //communicate with fraud microservice and check if fraudster
         FraudCheckResponse fraudCheckResponse = restTemplate.getForObject("http://"+FRAUD_SERVICE_NAME+"/api/v1/fraud-check/{customerId}",
@@ -36,7 +37,7 @@ public class CustomerServiceImpl implements CustomerService {
             throw new IllegalStateException("Fraudster!");
         }
 
-        return customerRepository.save(customerEntity);
+        return customerEntity;
 
         //todo: send notification
     }
