@@ -20,6 +20,7 @@ public class CustomerServiceImpl implements CustomerService {
         this.restTemplate = restTemplate;
     }
 
+    @Override
     public CustomerEntity createCustomer(CustomerEntity customerEntity){
 
         //todo: check if email is valid
