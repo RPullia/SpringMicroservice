@@ -2,8 +2,6 @@ package com.robp.customer.controller;
 
 
 import com.robp.fraud.FraudController;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import com.robp.customer.domain.dto.CustomerDto;
 import com.robp.customer.domain.entity.CustomerEntity;
 import com.robp.customer.mapper.Mapper;
@@ -23,8 +21,6 @@ public class  CustomerController {
     private final CustomerService customerService;
     private Mapper<CustomerEntity, CustomerDto> customerMapper;
 
-    private static final Logger logger = LoggerFactory.getLogger(FraudController.class);
-
     public CustomerController(CustomerService customerService, Mapper<CustomerEntity, CustomerDto> customerMapper) {
         this.customerService = customerService;
         this.customerMapper = customerMapper;
@@ -34,7 +30,7 @@ public class  CustomerController {
     public ResponseEntity<CustomerDto> registrateCustomer(@RequestBody CustomerDto customerDto){
         CustomerEntity customerEntity = customerMapper.mapFrom(customerDto);
         CustomerEntity savedCustomerEntity = customerService.createCustomer(customerEntity);
-        logger.info("Creation request for customer: ", customerDto.toString());
+        // todo: add logging
         return new ResponseEntity<>(customerMapper.mapTo(savedCustomerEntity), HttpStatus.CREATED);
     }
 }
