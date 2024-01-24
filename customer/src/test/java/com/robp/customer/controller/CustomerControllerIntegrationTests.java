@@ -17,12 +17,14 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
+// note: Start EurekaServerApplication and FraudApplication before running the tests
 
 @SpringBootTest
 @ExtendWith(SpringExtension.class)
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
 @AutoConfigureMockMvc
 public class CustomerControllerIntegrationTests {
+
 
     private MockMvc mockMvc;
 
@@ -37,6 +39,7 @@ public class CustomerControllerIntegrationTests {
 
     @Test
     public void testThatRegistrateCustomerSuccesfullyReturn201Created() throws Exception{
+
         CustomerEntity testCustomerA = CustomerTestDataUtil.createTestCustomerA();
         testCustomerA.setId(null);
         String customerJson = objectMapper.writeValueAsString(testCustomerA);
