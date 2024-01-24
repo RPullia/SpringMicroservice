@@ -1,11 +1,12 @@
-package com.robp.customer;
+package com.robp.customer.domain.entity;
 
 
 import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-public class Customer {
+@Table(name="customers")
+public class CustomerEntity {
 
     @Id
     @SequenceGenerator(
@@ -21,13 +22,13 @@ public class Customer {
     private String lastName;
     private String email;
 
-    public Customer(String firstName, String lastName, String email) {
+    public CustomerEntity(String firstName, String lastName, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
     }
 
-    public Customer() {
+    public CustomerEntity() {
     }
 
     public Integer getId() {
@@ -75,7 +76,7 @@ public class Customer {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Customer customer)) return false;
+        if (!(o instanceof CustomerEntity customer)) return false;
         return Objects.equals(getId(), customer.getId()) && Objects.equals(getFirstName(), customer.getFirstName()) && Objects.equals(getLastName(), customer.getLastName()) && Objects.equals(getEmail(), customer.getEmail());
     }
 

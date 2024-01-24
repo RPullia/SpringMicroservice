@@ -1,4 +1,4 @@
-package com.robp.customer;
+package com.robp.customer.config;
 
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
