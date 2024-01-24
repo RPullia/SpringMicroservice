@@ -1,3 +1,5 @@
+package com.robp.customer;
+
 import com.robp.customer.domain.entity.CustomerEntity;
 
 public final class CustomerTestDataUtil {
