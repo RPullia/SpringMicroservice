@@ -6,13 +6,13 @@
 	},
 	"item": [
 		{
-			"name": "Create Customer Request",
+			"name": "Create Customer Request to API Gateway",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"firstName\":\"Jhon\",\r\n    \"lastName\":\"Frusciante\",\r\n    \"email\":\"frusciante@rhcp.com\"\r\n}",
+					"raw": "{\r\n    \"firstName\":\"Tizio\",\r\n    \"lastName\":\"Caio\",\r\n    \"email\":\"tizio@caio.com\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -20,12 +20,12 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/v1/customers",
+					"raw": "http://localhost:8083/api/v1/customers",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8083",
 					"path": [
 						"api",
 						"v1",
@@ -36,12 +36,12 @@
 			"response": []
 		},
 		{
-			"name": "Is Fraudster Request",
+			"name": "Is Fraudster Request call to Fraud Microservice",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8081/api/v1/fraud-check",
+					"raw": "http://localhost:8081/api/v1/fraud-check/50",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -50,7 +50,8 @@
 					"path": [
 						"api",
 						"v1",
-						"fraud-check"
+						"fraud-check",
+						"50"
 					]
 				}
 			},
