@@ -1,6 +1,6 @@
 package com.robp.fraud.controller;
 
-import com.robp.fraud.domain.FraudCheckResponse;
+import com.robp.clients.fraud.FraudCheckResponse;
 import com.robp.fraud.service.impl.FraudCheckServiceImpl;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.GetMapping;
