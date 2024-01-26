@@ -11,8 +11,10 @@
 
 2. Open PGAdmin by navigating to [localhost:5050](http://localhost:5050).
 
-   2.1. Click on Servers -> Register -> Server
+   2.1. Click on Servers -> Register -> Server;
+   
    2.2. In the Connection tab set up the addres to "postgres" (Name of the container running the postgres image);
+   
    2.3. Once the server is connected create the database fraud, customer and notification.
 
 3. Check if also Zipkin is running at [localhost:9411](http://localhost:9411).
