@@ -1,4 +1,4 @@
-# Project architecture
+# Project's architecture
 
 ![Alt text](images/architecture.png)
 
